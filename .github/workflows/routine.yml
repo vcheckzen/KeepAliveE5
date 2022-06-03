@@ -1,0 +1,36 @@
+name: Invoke API
+
+on:
+  schedule:
+    - cron: '32 */8 * * *'
+  workflow_dispatch:
+
+jobs:
+  invoke:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          token: ${{ secrets.PAT }}
+
+      - name: Setup python and poetry
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - uses: Gr1N/setup-poetry@v4
+
+      - name: Pull upstream
+        run: bash wrapper.sh pull "sync"
+
+      - name: Install requirements
+        run: poetry install
+
+      - name: Test Api
+        env:
+          PASSWD: ${{ secrets.PASSWD }}
+        run: bash wrapper.sh invoke
+
+      - name: Commit and push
+        run: bash wrapper.sh push "update app config"

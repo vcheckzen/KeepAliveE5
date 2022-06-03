@@ -1,0 +1,43 @@
+name: Register APP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  register:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          token: ${{ secrets.PAT }}
+
+      - name: Setup python and poetry
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - uses: Gr1N/setup-poetry@v4
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Pull upstream
+        run: bash wrapper.sh pull "sync"
+
+      - name: Install requirements
+        run: |
+          poetry install
+          cd register
+          npm install
+
+      - name: Register app
+        env:
+          USER: ${{ secrets.USER }}
+          PASSWD: ${{ secrets.PASSWD }}
+        run: bash wrapper.sh register
+
+      - name: Commit and push
+        run: bash wrapper.sh push "generate app config"

@@ -1,0 +1,18 @@
+[tool.poetry]
+authors = ["vcheckzen"]
+description = "keep e5 alive"
+name = "keepalivee5"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.25.1"
+pycryptodome = "^3.10.1"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.5.6"
+rope = "^0.19.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]

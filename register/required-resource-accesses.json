@@ -1,0 +1,55 @@
+[
+  {
+    "resourceAccess": [
+      {
+        "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca",
+        "type": "Scope"
+      },
+      {
+        "id": "818c620a-27a9-40bd-a6a5-d96f7d610b4b",
+        "type": "Scope"
+      },
+      {
+        "id": "87f447af-9fa4-4c32-9dfa-4a57a73d18ce",
+        "type": "Scope"
+      },
+      {
+        "id": "89fe6a52-be36-487e-b7d8-d061c450a026",
+        "type": "Scope"
+      },
+      {
+        "id": "a154be20-db9c-4678-8ab7-66f6cc099a59",
+        "type": "Scope"
+      },
+      {
+        "id": "204e0828-b5ca-4ad8-b9f3-f32a958e7cc4",
+        "type": "Scope"
+      },
+      {
+        "id": "06da0dbc-49e2-44d2-8312-53f166ab848a",
+        "type": "Scope"
+      },
+      {
+        "id": "c5366453-9fb0-48a5-a156-24f0c49a4b84",
+        "type": "Scope"
+      },
+      {
+        "id": "024d486e-b451-40bb-833d-3e66d98c5c73",
+        "type": "Scope"
+      },
+      {
+        "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283",
+        "type": "Scope"
+      },
+      {
+        "id": "863451e7-0667-486c-a5d6-d135439485f0",
+        "type": "Scope"
+      },
+      {
+        "id": "205e70e5-aba6-4c52-a976-6d2d46c48043",
+        "type": "Scope"
+      }
+    ],
+    "resourceAppId": "00000003-0000-0000-c000-000000000000"
+  }
+]
